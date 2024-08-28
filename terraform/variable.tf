@@ -15,3 +15,9 @@ variable "namespace" {
   default     = "mywordpressapp"
   description = "the namespace for app"
 }
+
+variable "values" {
+  type        = list(any)
+  default     = []
+  description = "values for my chart"
+}
