@@ -3,6 +3,6 @@ resource "helm_release" "wordpress" {
   chart            = "${path.module}/myapp"
   namespace        = "wordpress"
   wait             = false
-  depends_on       = {kubernetes_namespace.wordpress}
+  depends_on       = [kubernetes_namespace.wordpress]
   values           = var.values
 }
