@@ -4,20 +4,24 @@ variable "name" {
   description = "my wordpress application"
 }
 
-variable "chart" {
-  type        = string
-  default     = "../myapp"
-  description = "location of my wordpress app chart"
-}
-
 variable "namespace" {
   type        = string
   default     = "mywordpressapp"
   description = "the namespace for app"
 }
 
-variable "values" {
-  type        = list(any)
+variable values {
+  type        = list
   default     = []
   description = "values for my chart"
+}
+
+variable annotations {
+  type = map (any)
+  description = "map of annotation for namespace"
+}
+
+variable labels {
+  type = map (any)
+  description = "map of labels for namespace"
 }
